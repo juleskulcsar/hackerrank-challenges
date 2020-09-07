@@ -9,6 +9,5 @@
 //a = array containing arrival times (0 = on time; >0 means late; - means early)
 
 function angryProfessor(k, a) {
-  let onTime = a.filter(t => t <= 0);
-  return onTime.length >= k ? "NO" : "YES";
+  return a.filter(t => t <= 0).length ? "YES" : "NO";
 }
