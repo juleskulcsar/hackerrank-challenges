@@ -12,6 +12,7 @@
 
 //The values for y are [4,2,5,1,3].
 
+//solution 1
 function permutationEquation(p) {
   let arr = [];
   for (let i = 0; i < p.length; i++) {
@@ -19,4 +20,16 @@ function permutationEquation(p) {
     arr.push(p.indexOf(j) + 1);
   }
   return arr;
+}
+
+//solution 2
+function permutationEquation(p) {
+  let arr = [...p];
+  let finalArr = [];
+  p.sort((a, b) => a - b);
+  for (let i = 0; i < p.length; i++) {
+    let j = arr.indexOf(p[i]) + 1;
+    finalArr.push(arr.indexOf(j) + 1);
+  }
+  return finalArr;
 }
